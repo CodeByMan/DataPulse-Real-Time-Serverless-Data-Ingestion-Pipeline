@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Environment variables / secrets
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+secrets.json
+
+# AWS / Serverless
+.aws/
+samconfig.toml
+.aws-sam/
+.serverless/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
+logs/
+
+# Generated output files
+output_files/
+
+# Large packaging files
+*.zip
+
+# PowerPoint temp files
+~$*.pptx
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Cache
+.cache/
+.pytest_cache/
+
+# Temporary files
+*.tmp
+*.bak
