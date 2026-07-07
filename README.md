@@ -20,6 +20,8 @@
 
 ---
 
+<img src="Images/architecture.png" alt="DataPulse Architecture" width="900"/>
+
 ## 📌 Project Overview
 
 **DataPulse** is a real-time serverless data ingestion pipeline that collects data from multiple external financial sources and stores the results in a cloud-based data lake.
@@ -46,14 +48,6 @@ The collected data is stored in **Amazon S3** using source-based and timestamp-b
 - Use SQS queues for event-driven processing
 - Use SNS topics for pipeline notification
 - Prepare ingested data for Snowflake warehouse loading
-
----
-
-## 🏗️ Architecture Diagram
-
-<p align="center">
-<img src="Images/architecture.png" alt="DataPulse Architecture" width="900"/>
-</p>
 
 ---
 
@@ -448,54 +442,6 @@ sql-code/snowflake.sql
 ```
 
 This creates the Snowflake database/schema/table required for stock data loading.
-
----
-
-## ⚠️ Important Before GitHub Push
-
-Review and sanitize these files before publishing:
-
-```text
-python-code/fetch-code/openExchangeRates.py
-python-code/fetch-code/yahooFinance.py
-python-code/load-code/yahooFinance.py
-python-code/load-code/openexchangerates.py
-output_files/
-lambda_layer.zip
-```
-
-Replace real values such as:
-
-```text
-S3 bucket names
-OpenExchangeRates API keys
-Snowflake secret names
-AWS regions
-SQL Server credentials
-AWS account IDs
-Any private endpoints
-```
-
-Use placeholders:
-
-```text
-<S3_BUCKET_NAME>
-<OPENEXCHANGE_APP_ID>
-<SNOWFLAKE_SECRET_ID>
-<AWS_REGION>
-<SQL_SERVER_HOST>
-<SQL_DATABASE>
-<SQL_USER>
-<SQL_PASSWORD>
-```
-
-### Specific items noticed
-
-- `openExchangeRates.py` contains a hardcoded API key placeholder.
-- `yahooFinance.py` contains a hardcoded bucket name.
-- Load code uses mixed targets: Snowflake for Yahoo Finance and SQL Server style connection for OpenExchangeRates.
-- `output_files/` contains generated sample outputs; keep only if you want sample data in the repository.
-- The project includes two PowerPoint files. Keep one final presentation and remove duplicates if not needed.
 
 ---
 
